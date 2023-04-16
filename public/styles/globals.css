@@ -1,0 +1,263 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    color: #1F1E1C;
+    background-color: white;
+    line-height: 1.6;
+}
+
+.sec-loading {
+  --border-width: 7px;
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec-loading .one {
+  height: 80px;
+  width: 80px;
+  border: var(--border-width) solid darkslateblue;
+  transform: rotate(45deg);
+  border-radius: 0 50% 50% 50%;
+  position: relative;
+  animation: move 0.5s linear infinite alternate-reverse;
+}
+.sec-loading .one::before {
+  content: "";
+  position: absolute;
+  height: 55%;
+  width: 55%;
+  border-radius: 50%;
+  border: var(--border-width) solid transparent;
+  border-top-color: darkslateblue;
+  border-bottom-color: darkslateblue;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes move {
+  to {
+    transform: translateY(15px) rotate(45deg);
+  }
+}
+
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #1F1E1C;
+}
+
+.about-us {
+	margin-left: auto;
+	color: #1F1E1C;
+	text-decoration: none;
+}
+
+.about-us:hover {
+color: #5D3FD3;
+}
+
+.container {
+		min-width: 1000px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 220px;
+}
+.hero {
+/* 	padding: 3rem 2rem; */
+/* 	text-align: center; */
+}
+
+.hero h1 {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+/* .inputContainer {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+} */
+.input-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+.url-input {
+	flex-grow: 1;
+	padding: 0.5rem;
+	margin-right: 1rem;
+	border: 1px solid #1F1E1C;
+	border-radius: 4px;
+}
+
+.generate-tweets {
+	padding: 0.5rem 1rem;
+	background-color: #5D3FD3;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.generateTweets:hover {
+background-color: #4b32b8;
+}
+
+.results {
+	margin-top: 24px;
+	color: black;
+/* padding: 0.5rem; */
+}
+
+.results h2 {
+font-size: 2rem;
+margin-bottom: 1rem;
+}
+
+.tweetContainer {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1rem;
+}
+
+/* .tweet {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem;
+background-color: #F1F1F1;
+border-radius: 8px;
+} */
+
+.tweet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #F1F1F1;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.tweet p {
+	margin-right: 1rem;
+}
+
+.copyButton {
+padding: 0.5rem;
+background-color: #5D3FD3;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.copyButton:hover {
+background-color: #4b32b8;
+}
+
+footer {
+	padding: 1rem 2rem;
+	color: #1F1E1C;
+	text-align: center;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color:white;
+}
+.nav-bar .logo {
+font-size: 1.5rem;
+font-weight: bold;
+color: #1F1E1C;
+}
+
+.nav-bar .about-us {
+color: #1F1E1C;
+text-decoration: none;
+}
+
+.nav-bar .about-us:hover {
+color: #5D3FD3;
+}
+
+
+/* LOADER COMPONENT */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: darkslategray;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
