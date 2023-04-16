@@ -132,8 +132,8 @@ function DisplayCard({ text, url }) {
 
 function Spinner () {
 	return (
-	<section class="sec-loading">
-  <div class="one">
+	<section className="sec-loading">
+  <div className="one">
   </div>
 </section>
 	)
